@@ -1,5 +1,6 @@
 # Dropdown Component 
 ## Installation
+After cloning or downloading the repository, run the following to initialize: 
 ```
 npm install 
 ```
@@ -12,14 +13,16 @@ import Dropdown from './component/Dropdown'
 ```
 
 ```
-const cities = ['New York', 'San Francisco', 'San Diego', "Seattle", "Los Angeles", "Boston", "Atlanta", "Portland", "Phoenix", "Miami"];
+const cities = ['New York', 'San Francisco', 'San Diego', "Seattle", 
+"Los Angeles", "Boston", "Atlanta", "Portland", "Phoenix", "Miami"];
 
 <Dropdown options={cities}/>
 ```
 
 If you need callback for the value and custom placeholder call onChange and placeholder in the props: 
 ```
-const cities = ['New York', 'San Francisco', 'San Diego', "Seattle", "Los Angeles", "Boston", "Atlanta", "Portland", "Phoenix", "Miami"];
+const cities = ['New York', 'San Francisco', 'San Diego', "Seattle", 
+"Los Angeles", "Boston", "Atlanta", "Portland", "Phoenix", "Miami"];
 
 <Dropdown options={cities} multi isSearch placeholder={"Select Option(s)"} onChange={(value) => this.setValue(value)}/>
 ```
