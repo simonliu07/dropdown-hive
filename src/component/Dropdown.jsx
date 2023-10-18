@@ -10,11 +10,11 @@ class Dropdown extends Component {
             isOpen: false,                                          // toggle dropdown
             options: (this.props.options !== undefined) ? this.props.options.map(val => String(val)): [],    // cast all options to string values 
             multiselect: (this.props.multi) ? true : false,         // if allow multi selection 
-            selectedOptions: [],                                    // selected options
+            selectedOptions: (this.props.values !== undefined) ? 
+            this.props.values.filter(value => this.props.options.includes(value)) : [],                     // selected options, if values provided, set as default
             searchValue: "",                                        // search bar value 
             placeholder: (this.props.placeholder !== undefined) ? this.props.placeholder : "Select..."
         }
-    
     }
 
     componentDidUpdate(prevProps, prevState){
@@ -115,6 +115,7 @@ class Dropdown extends Component {
 
     render() {
         const updateSearch = this.debounce(this.handleSearch, 500);     // set debounce value 
+        console.log(this.state)
         return (
             <div className="multiselect-dropdown" ref={this.containerRef}>
                 {/* This the the Dropdown main component in hmlt  */}
@@ -173,6 +174,7 @@ Dropdown.propTypes = {
     isSearch: PropTypes.bool,
     placeholder: PropTypes.string,
     onChange: PropTypes.func,
+    values: PropTypes.array,
 }
 
 

@@ -12,7 +12,7 @@ function App() {
       <div className='dropdowns'>
         <div>
           <label> Multi-Select (Cities): </label> <br/>
-          <Dropdown options={cities} multi isSearch placeholder={"Select Option(s)"} onChange={(value) => setValue(value)}/><br/>
+          <Dropdown options={cities} multi isSearch values={["New York", "Boston"]} placeholder={"Select Option(s)"} onChange={(value) => setValue(value)}/><br/>
           Selcted Values: {value.join(', ')}
         </div>
         <div>

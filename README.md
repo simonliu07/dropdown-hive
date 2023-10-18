@@ -5,6 +5,14 @@ After cloning or downloading the repository, run the following to initialize thr
 npm install 
 ```
 
+## Running Dev 
+To start the dev environment, run the following code in respository's home directory: 
+```
+npm run dev
+```
+
+Press `o` to automatically open in browser
+
 ## Usage
 
 import: 
@@ -36,3 +44,4 @@ const cities = ['New York', 'San Francisco', 'San Diego', "Seattle",
 | multi | bool | false | "Allow multiple selections"
 | isSearch | bool | false | "Search bar to filter options"
 | onChange | func | | On value change callback, return array of values as String array
+| values | array | [] | Set default selected options
