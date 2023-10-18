@@ -1,6 +1,6 @@
 # Dropdown Component 
 ## Installation
-After cloning or downloading the repository, run the following to initialize: 
+After cloning or downloading the repository, run the following to initialize throught node.js: 
 ```
 npm install 
 ```
