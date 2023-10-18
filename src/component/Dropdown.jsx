@@ -117,6 +117,7 @@ class Dropdown extends Component {
         const updateSearch = this.debounce(this.handleSearch, 500);     // set debounce value 
         return (
             <div className="multiselect-dropdown" ref={this.containerRef}>
+                {/* This the the Dropdown main component in hmlt  */}
                 <div className={`dropdown-toggle ${this.state.isOpen ? 'open' : ''}`}>
                     <div onClick={this.toggleDropdown}>
                         {this.state.selectedOptions.length === 0 ? this.state.placeholder : this.state.selectedOptions.join(', ')}
@@ -127,10 +128,10 @@ class Dropdown extends Component {
                         {this.state.isOpen ? <MdKeyboardArrowUp/> : <MdKeyboardArrowDown />}
                     </div>
                 </div>
-
+                {/* Dropdown of all the options */}
                 {this.state.isOpen && (
                 <ul className="dropdown-options">
-
+                    {/* Static buttons for select all & de-select all*/}
                     {this.state.multiselect && (
                         <div className='dropdown-options-buttons'>
                             <div className='select-buttons'>
@@ -143,10 +144,11 @@ class Dropdown extends Component {
                             </div>
                         </div>     
                     )}
-
+                    {/* Search bar to filter options if pass in props */}
                     {this.props.isSearch && (
                         <input onChange={updateSearch} className='search-box'/>
                     )}
+                    {/* Options: blue if selected, else white */}
                     {this.state.options.filter(option => option.toLowerCase().includes(this.state.searchValue.toLowerCase())).map((option) => (
                     <li
                         key={option}
